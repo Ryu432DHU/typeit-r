@@ -9,8 +9,12 @@ function App() {
   return (
     <div className="App">
       <h1>React App</h1>
-      <p>My name is {name}</p>
-      <button onClick={e => console.log(e)}>Click me</button>
+      <p>My name is {name} {lastName}</p>
+      { lastName === ""
+        ? <p>You haven't set the last name</p>
+        : <p>You've already set the last name!</p> 
+      }
+      <button onClick={() => setLastName("Yamada")}>Set the last name</button>
     </div>
   )
 }
